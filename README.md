@@ -5,7 +5,9 @@ This project is responsive.
 
 **Outputs:**
 1. For PC
+#
 ![output for pc](screenshots/output1.jpg)
+#
 ![output for pc](screenshots/output4.jpg)
 
 2. For Mobile
