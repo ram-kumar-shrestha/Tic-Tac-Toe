@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="project-description" content="Tic Tac Toe is a famous and simple game. This game is presented online here with HTML, CSS and JavaScripts">
+    <meta name="keywords" content="tic tac toe, game, online game">
+    <meta authors="Ram Kumar Shrestha">
+    <title>Tic Tac Toe</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- favicon icon -->
+    <link rel="icon" href="images/fav-icon.png">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="page-title"><span class="highlight-text">T</span>ic
+            <span class="highlight-text">T</span>ac
+            <span class="highlight-text">T</span>oe
+            <span ><button class="clear">Clear</button></span>
+        </h1>
+
+    </header>
+    <main>
+        <!-- <div class="one-time__hint"></div> -->
+        <div class="container">
+            <div class="player1">
+                Player 1 (X)
+
+                <div class="result" id="player1"></div>
+                <div class="one-time__warning"></div>
+            </div>
+
+            <div class="layout" disabled>
+                <div class="value_boxes">
+                    <button class="value_box"></button>
+                    <button class="value_box"></button>
+                    <button class="value_box"></button>
+                </div>
+
+                <div class="value_boxes">
+                    <button class="value_box"></button>
+                    <button class="value_box"></button>
+                    <button class="value_box"></button>
+                </div>
+
+                <div class="value_boxes">
+                    <button class="value_box"></button>
+                    <button class="value_box"></button>
+                    <button class="value_box"></button>
+                </div>
+            </div>
+
+            <div class="player2">
+                Player 2 (0)
+                <div class="result" id="player2"></div>
+                <div class="one-time__hint"></div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="footer">
+            Designed By: <span><a href="https://ramkumarstha.com.np">Ram Kumar Shrestha</a></span>
+        </div>
+    </footer>
+    <!-- Custom JavaScripts -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

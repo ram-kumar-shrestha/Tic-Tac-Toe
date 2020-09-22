@@ -1,0 +1,230 @@
+@import "_variables.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: $default-size;
+    background: map-get($map: $colors, $key: bg);
+    display: grid;
+    grid-template-rows: 5rem auto fit-content(4rem);
+    grid-template-areas: "header"
+        "main"
+        "footer";
+    height: 100vh;
+}
+
+header {
+    grid-area: header;
+
+    .page-title {
+        font: {
+            size: $default-size * 2;
+            family: Arial, Helvetica, sans-serif;
+        }
+
+        text-align: center;
+        margin: $default-size*2;
+        color: map-get($map: $colors, $key: title);
+
+        @media(max-width: 40rem) {
+            font-size: $default-size * 1.2;
+        }
+
+        .highlight-text {
+            font: {
+                family: Georgia, 'Times New Roman', Times, serif;
+                size: $large-size;
+            }
+
+            @media(max-width: 40rem) {
+                font-size: $medium-size;
+            }
+        }
+
+        .clear {
+            padding: $default-size;
+            border: none;
+            background: map-get($map: $colors, $key: danger);
+            color: map-get($map: $colors, $key:plain-color);
+            // float: right;
+            cursor: pointer;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: map-get($map: $colors, $key: danger);
+                background: map-get($map: $colors, $key: plain-color);
+                transition: all 1s;
+            }
+        }
+    }
+}
+
+main {
+
+    grid-area: main;
+    margin: $medium-size * 1.5 auto 0;
+
+    @media(max-width: 60rem) {
+        margin: $default-size auto;
+    }
+}
+
+.container {
+    display: flex;
+    justify-items: space-between;
+    align-content: center;
+    text-align: center;
+
+    .player1,
+    .player2 {
+        margin: $large-size;
+        width: 20%;
+
+        font: {
+            weight: 600;
+            size: $default-size;
+        }
+
+    }
+
+    .result {
+        font: {
+            weight: 400;
+            size: $small-size;
+        }
+    }
+
+    @media(max-width: 40rem) {
+        flex-direction: column;
+
+        .player1,
+        .player2 {
+            margin: $small-size auto;
+            width: 100%;
+        }
+
+        .player1 {
+            order: 1;
+        }
+
+        .player2 {
+            order: 2;
+        }
+
+        .layout {
+            order: 3;
+        }
+
+
+
+    }
+}
+
+.layout {
+    background: map-get($map: $colors, $key: bg-layout);
+    padding: $small-size;
+    width: 50vw;
+
+
+    @media(max-width: 40rem) {
+        width: 80vw;
+
+        .foo {
+
+            // align in middle in smaller devices
+            @media(max-height: 50rem) {
+                margin: $default-size auto 0;
+
+                .foo {
+                    @media(max-height : 36rem) {
+                        margin: $small-size auto 0;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    // align in middle in larger devices
+    @media(min-height: 50rem) {
+        margin: $default-size auto 0;
+    }
+
+    // align layout in portrait mode of mobile
+    @media(min-width: 40rem) and (max-height: 30rem) {
+        margin: $default-size auto 0;
+    }
+
+    .value_boxes {
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+
+        .value_box {
+            width: 30%;
+            height: $large-size * 1.5;
+            margin: $small-size auto;
+            padding: $small-size $default-size;
+            background: map-get($map: $colors, $key: bg-box);
+            text-align: center;
+            font-size: $large-size;
+            cursor: pointer;
+            border: none;
+
+            @media(max-width: 40rem) {
+                height: $large-size;
+                font-size: $medium-size;
+            }
+
+            &:hover,
+            &:active,
+            &:focus {
+                background: map-get($map: $colors, $key: box-hover);
+                color: map-get($map: $colors, $key: bg-box);
+            }
+        }
+    }
+}
+
+.one-time__hint, .one-time__warning {
+    color: map-get($map: $colors, $key: info-color);
+    background: map-get($map: $colors, $key: bg-footer);
+    margin: $small-size auto;
+    width: 50%;
+    text-transform: uppercase;
+    font-size: $small-size;
+    @media(max-width: 60rem){
+        width: 100%;;
+        margin: 0 auto;
+    }
+}
+
+
+footer {
+    grid-area: footer;
+
+    .footer {
+        text-align: center;
+        padding: $default-size;
+        background: map-get($map: $colors, $key: bg-footer);
+        color: lighten($color: map-get($map: $colors, $key: bg-footer), $amount: 70%);
+    }
+
+    a {
+        text-decoration: none;
+        color: lighten($color: map-get($map: $colors, $key: bg-footer), $amount: 30%);
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: map-get($map: $colors, $key: highlight-hover);
+        }
+    }
+}
